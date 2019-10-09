@@ -62,10 +62,12 @@ public class Metadata
     private byte[] _signingCertificate;
     @SerializedName("documentTypeGuid")
     private UUID _documentTypeGuid;
+    @SerializedName("containsPersonalData")
+    private Boolean _containsPersonalData;
 
     public Metadata() { }
     
-    public Metadata(UUID aDocumentGuid, String aAuthor, Date aAddedDateTime, Integer aConfidentiality, String aLabel, String aFileName, String aFileExtension, UUID aLegacyGuid, byte[] aDigitalSignature, Integer aDigitalSignatureType, String aTitle, String aFileSHA1, UUID aNodeGuid, UUID aSubjectGuid, UUID aStatusGuid, Date aCreatedDate, Date aReceivedDate, String aComment, CustomMetadata[] aCustomMetadatas, byte[] aSigningCertificate, UUID aDocumentTypeGuid)
+    public Metadata(UUID aDocumentGuid, String aAuthor, Date aAddedDateTime, Integer aConfidentiality, String aLabel, String aFileName, String aFileExtension, UUID aLegacyGuid, byte[] aDigitalSignature, Integer aDigitalSignatureType, String aTitle, String aFileSHA1, UUID aNodeGuid, UUID aSubjectGuid, UUID aStatusGuid, Date aCreatedDate, Date aReceivedDate, String aComment, CustomMetadata[] aCustomMetadatas, byte[] aSigningCertificate, UUID aDocumentTypeGuid, Boolean aContainsPersonalData)
     {
         this._documentGuid = aDocumentGuid;
         this._author = aAuthor;
@@ -88,6 +90,7 @@ public class Metadata
         this._customMetadatas = aCustomMetadatas;
         this._signingCertificate = aSigningCertificate;
         this._documentTypeGuid = aDocumentTypeGuid;
+        this._containsPersonalData = aContainsPersonalData;
     }    
     
     public UUID getDocumentGuid()
@@ -285,9 +288,9 @@ public class Metadata
         return _signingCertificate;
     }
     
-    public void setSigningCertificate(byte[] _signingCertificate)
+    public void setSigningCertificate(byte[] aSigningCertificate)
     {
-        this._signingCertificate = _signingCertificate;
+        this._signingCertificate = aSigningCertificate;
     }
     
     public UUID getDocumentTypeGuid()
@@ -295,8 +298,18 @@ public class Metadata
         return _documentTypeGuid;
     }
     
-    public void setDocumentTypeGuid(UUID _documentTypeGuid)
+    public void setDocumentTypeGuid(UUID aDocumentTypeGuid)
     {
-        this._documentTypeGuid = _documentTypeGuid;
+        this._documentTypeGuid = aDocumentTypeGuid;
+    }
+    
+    public Boolean getContainsPersonalData()
+    {
+        return _containsPersonalData;
+    }
+    
+    public void setContainsPersonalData(Boolean aContainsPersonalData)
+    {
+        this._containsPersonalData = aContainsPersonalData;
     }
 }
