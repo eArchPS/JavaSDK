@@ -392,6 +392,48 @@ public class EAApi
 
         String response = HttpConnectionHelper.GetResponse(url, HttpMethod.Patch, aToken, aLegacyGuid);
     }
+    
+    public void MetadataEditContainsPersonalData(String aToken, UUID aDocumentGuid, Boolean aContainsPersonalData) throws Exception
+    {
+        String url = String.format(ApiActions.EditContainsPersonalData, aDocumentGuid);
+        
+        String response = HttpConnectionHelper.GetResponse(url, HttpMethod.Patch, aToken, aContainsPersonalData);
+    }
+
+    public void MetadataEditCode(String aToken, UUID aDocumentGuid, String aCode) throws Exception
+    {
+        String url = String.format(ApiActions.EditCode, aDocumentGuid);
+        
+        String response = HttpConnectionHelper.GetResponse(url, HttpMethod.Patch, aToken, aCode);
+    }
+    
+    public void MetadataEditReceiver(String aToken, UUID aDocumentGuid, String aReceiver) throws Exception
+    {
+        String url = String.format(ApiActions.EditReceiver, aDocumentGuid);
+        
+        String response = HttpConnectionHelper.GetResponse(url, HttpMethod.Patch, aToken, aReceiver);
+    }
+    
+    public void MetadataEditSender(String aToken, UUID aDocumentGuid, String aSender) throws Exception
+    {
+        String url = String.format(ApiActions.EditSender, aDocumentGuid);
+        
+        String response = HttpConnectionHelper.GetResponse(url, HttpMethod.Patch, aToken, aSender);
+    }
+    
+    public void MetadataEditShortDescription(String aToken, UUID aDocumentGuid, String aShortDescription) throws Exception
+    {
+        String url = String.format(ApiActions.EditShortDescription, aDocumentGuid);
+        
+        String response = HttpConnectionHelper.GetResponse(url, HttpMethod.Patch, aToken, aShortDescription);
+    }
+    
+    public void MetadataEditComment(String aToken, UUID aDocumentGuid, String aComment) throws Exception
+    {
+        String url = String.format(ApiActions.EditComment, aDocumentGuid);
+        
+        String response = HttpConnectionHelper.GetResponse(url, HttpMethod.Patch, aToken, aComment);
+    }
 
     // </editor-fold>
 

@@ -63,11 +63,19 @@ public class Metadata
     @SerializedName("documentTypeGuid")
     private UUID _documentTypeGuid;
     @SerializedName("containsPersonalData")
-    private Boolean _containsPersonalData;
+    private Boolean _containsPersonalData;    
+    @SerializedName("code")
+    private String _code;
+    @SerializedName("receiver")
+    private String _receiver;
+    @SerializedName("sender")
+    private String _sender;
+    @SerializedName("shortDescription")
+    private String _shortDescription;
 
     public Metadata() { }
     
-    public Metadata(UUID aDocumentGuid, String aAuthor, Date aAddedDateTime, Integer aConfidentiality, String aLabel, String aFileName, String aFileExtension, UUID aLegacyGuid, byte[] aDigitalSignature, Integer aDigitalSignatureType, String aTitle, String aFileSHA1, UUID aNodeGuid, UUID aSubjectGuid, UUID aStatusGuid, Date aCreatedDate, Date aReceivedDate, String aComment, CustomMetadata[] aCustomMetadatas, byte[] aSigningCertificate, UUID aDocumentTypeGuid, Boolean aContainsPersonalData)
+    public Metadata(UUID aDocumentGuid, String aAuthor, Date aAddedDateTime, Integer aConfidentiality, String aLabel, String aFileName, String aFileExtension, UUID aLegacyGuid, byte[] aDigitalSignature, Integer aDigitalSignatureType, String aTitle, String aFileSHA1, UUID aNodeGuid, UUID aSubjectGuid, UUID aStatusGuid, Date aCreatedDate, Date aReceivedDate, String aComment, CustomMetadata[] aCustomMetadatas, byte[] aSigningCertificate, UUID aDocumentTypeGuid, Boolean aContainsPersonalData, String aCode, String aReceiver, String aSender, String aShortDescription)
     {
         this._documentGuid = aDocumentGuid;
         this._author = aAuthor;
@@ -91,7 +99,11 @@ public class Metadata
         this._signingCertificate = aSigningCertificate;
         this._documentTypeGuid = aDocumentTypeGuid;
         this._containsPersonalData = aContainsPersonalData;
-    }    
+        this._code = aCode;
+        this._receiver = aReceiver;
+        this._sender = aSender;
+        this._shortDescription = aShortDescription;
+    }
     
     public UUID getDocumentGuid()
     {
@@ -311,5 +323,45 @@ public class Metadata
     public void setContainsPersonalData(Boolean aContainsPersonalData)
     {
         this._containsPersonalData = aContainsPersonalData;
+    }
+    
+    public String getCode()
+    {
+        return _code;
+    }
+    
+    public void setCode(String aCode)    
+    {
+        this._code = aCode;
+    }
+    
+    public String getReceiver()
+    {
+        return _receiver;
+    }
+    
+    public void setReceiver(String aReceiver)    
+    {
+        this._receiver = aReceiver;
+    }
+    
+    public String getSender()
+    {
+        return _sender;
+    }
+    
+    public void setSender(String aSender)    
+    {
+        this._sender = aSender;
+    }
+    
+    public String getShortDescription()
+    {
+        return _shortDescription;
+    }
+    
+    public void setShortDescription(String aShortDescription)    
+    {
+        this._shortDescription = aShortDescription;
     }
 }

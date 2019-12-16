@@ -54,6 +54,12 @@ public class ApiActions
     public static String EditStatusGuid = "/Document/%s/Metadata/StatusGuid";
     public static String EditDocumentSubjectGuid = "/Document/%s/Metadata/DocumentSubjectGuid";
     public static String EditDocumentLegacyGuid = "/Document/%s/Metadata/DocumentLegacyGuid";
+    public static String EditContainsPersonalData = "/Document/%s/Metadata/ContainsPersonalData";
+    public static String EditCode = "/Document/%s/Metadata/Code";
+    public static String EditReceiver = "/Document/%s/Metadata/Receiver";
+    public static String EditSender = "/Document/%s/Metadata/Sender";
+    public static String EditShortDescription = "/Document/%s/Metadata/ShortDescription";
+    public static String EditComment = "/Document/%s/Metadata/Comment";
         
     public static String EditCustomMetadata = "/Document/%s/CustomMetadata/";
         
