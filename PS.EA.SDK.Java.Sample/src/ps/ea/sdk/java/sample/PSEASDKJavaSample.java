@@ -53,7 +53,7 @@ public class PSEASDKJavaSample
         }
         
         // Create a new Node object
-        Node node = new Node(null, "Novo vozlisce", rootNode.getNodeGuid(), 12, 2, "Koda vozlisca", Boolean.TRUE);
+        Node node = new Node(null, "Novo vozlisce", rootNode.getNodeGuid(), 12, 2, "Koda vozlisca", Boolean.TRUE, null, null);
         
         // Add node object and print returned guid
         UUID nodeGuid = client.AddNode(token, node);
