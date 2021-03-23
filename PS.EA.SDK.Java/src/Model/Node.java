@@ -7,6 +7,7 @@ package Model;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.UUID;
+import java.util.Date;
 
 /**
  *
@@ -28,10 +29,14 @@ public class Node
     private String _code;
     @SerializedName("dispositionSet")
     private Boolean _dispositionSet;
+    @SerializedName("isLocked")
+    private Boolean _isLocked;
+    @SerializedName("lockedDateTime")
+    private Date _lockedDateTime;
 
     public Node() { }
     
-    public Node(UUID aNodeGuid, String aLabel, UUID aNodeParentGuid, Integer aRetentionPeriodInMonths, Integer aRetentionType, String aCode, Boolean aDispositionSet)
+    public Node(UUID aNodeGuid, String aLabel, UUID aNodeParentGuid, Integer aRetentionPeriodInMonths, Integer aRetentionType, String aCode, Boolean aDispositionSet, Boolean aIsLocked, Date aLockedDateTime)
     {
         this._nodeGuid = aNodeGuid;
         this._label = aLabel;
@@ -40,6 +45,8 @@ public class Node
         this._retentionType = aRetentionType;
         this._code = aCode;
         this._dispositionSet = aDispositionSet;
+        this._isLocked = aIsLocked;
+        this._lockedDateTime = aLockedDateTime;
     }
     
     public UUID getNodeGuid()
@@ -110,5 +117,25 @@ public class Node
     public void setDispositionSet(Boolean aDispositionSet)
     {
         this._dispositionSet = aDispositionSet;
-    }  
+    }
+    
+    public Boolean getIsLocked()
+    {
+        return _isLocked;
+    }
+    
+    public void setIsLocked(Boolean _isLocked)
+    {
+        this._isLocked = _isLocked;
+    }
+    
+    public Date getLockedDateTime()
+    {
+        return _lockedDateTime;
+    }
+    
+    public void setLockedDateTime(Date _lockedDateTime)
+    {
+        this._lockedDateTime = _lockedDateTime;
+    }
 }
