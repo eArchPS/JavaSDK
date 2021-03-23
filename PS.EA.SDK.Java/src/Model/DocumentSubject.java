@@ -27,16 +27,25 @@ public class DocumentSubject
     private String _title;
     @SerializedName("addedDateTime")
     private Date _addedDateTime;
+    @SerializedName("nodeGuid")
+    private UUID _nodeGuid;
+    @SerializedName("isLocked")
+    private Boolean _isLocked;
+    @SerializedName("lockedDateTime")
+    private Date _lockedDateTime;
 
     public DocumentSubject() { }
     
-    public DocumentSubject(UUID aDocumentSubjectGuid, String aClasification, String aDescription, String aTitle, Date aAddedDateTime)
+    public DocumentSubject(UUID aDocumentSubjectGuid, String aClasification, String aDescription, String aTitle, Date aAddedDateTime, UUID aNodeGuid, Boolean aIsLocked, Date aLockedDateTime)
     {
         this._documentSubjectGuid = aDocumentSubjectGuid;
         this._clasification = aClasification;
         this._description = aDescription;
         this._title = aTitle;
         this._addedDateTime = aAddedDateTime;
+        this._nodeGuid = aNodeGuid;
+        this._isLocked = aIsLocked;
+        this._lockedDateTime = aLockedDateTime;
     }    
     
     public UUID getDocumentSubjectGuid()
@@ -87,5 +96,35 @@ public class DocumentSubject
     public void setAddedDateTime(Date _addedDateTime)
     {
         this._addedDateTime = _addedDateTime;
+    }
+    
+    public UUID getNodeGuid()
+    {
+        return _nodeGuid;
+    }
+    
+    public void setNodeGuid(UUID _nodeGuid)
+    {
+        this._nodeGuid = _nodeGuid;
+    }
+    
+    public Boolean getIsLocked()
+    {
+        return _isLocked;
+    }
+    
+    public void setIsLocked(Boolean _isLocked)
+    {
+        this._isLocked = _isLocked;
+    }
+    
+    public Date getLockedDateTime()
+    {
+        return _lockedDateTime;
+    }
+    
+    public void setLockedDateTime(Date _lockedDateTime)
+    {
+        this._lockedDateTime = _lockedDateTime;
     }
 }
